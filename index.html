@@ -45,6 +45,7 @@
         			},50);
         		}
 
+      var ToneOut = playTone(1);
 
 
         // Experiment parameters
@@ -74,7 +75,7 @@
         // Define experiment blocks
         var instruction_block = {
                 type: "text",
-                text: [welcome_message, instructions],
+                text: [welcome_message, instructions, ToneOut],
                 timing_post_trial: 1500
             };
 
