@@ -27,6 +27,26 @@
 
 
     <script type="text/javascript">
+
+        var audio= document.getElementById("myaudio_twelve_tones");
+
+        function playTone(selectPart){
+          startT = (selectPart * 0.5) - 0.5;
+          stopT  = startT + 0.4;
+
+        	audio.currentTime=startT;
+        	audio.play();
+
+        // the below setInterval is to check the currentTime
+        	setInterval(function(){
+        		if(audio.currentTime>stopT){
+        			audio.pause();
+        				}
+        			},50);
+        		}
+
+
+
         // Experiment parameters
         var n_trials_per_stimulus = 1;
 
