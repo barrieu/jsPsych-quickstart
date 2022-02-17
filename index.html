@@ -45,8 +45,9 @@
         			},50);
         		}
 
-      var ToneOut = playTone(1);
-
+      var ToneOut1 = playTone(1);
+      var ToneOut2 = playTone(2);
+      var ToneOut3 = playTone(3);
 
         // Experiment parameters
         var n_trials_per_stimulus = 1;
@@ -75,7 +76,7 @@
         // Define experiment blocks
         var instruction_block = {
                 type: "text",
-                text: [welcome_message, instructions, ToneOut],
+                text: [welcome_message, instructions, ToneOut1, ToneOut2, ToneOut3],
                 timing_post_trial: 1500
             };
 
