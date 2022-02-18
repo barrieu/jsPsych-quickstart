@@ -48,8 +48,27 @@
         	}
 
 
-        function playList(){
+        function playList1(){
+          console.log("playing First Audio");
+          setTimeout(function(){
+            playTone(1);
+            console.log("played 1");
+          }, 500)
 
+          setTimeout(function(){
+            playTone(2);
+            console.log("played 2");
+          }, 1000)
+
+          setTimeout(function(){
+            playTone(3);
+            console.log("played 3");
+          }, 1500)
+
+        }
+
+        function playList2(){
+          console.log("playing Second Audio");
           setTimeout(function(){
             playTone(1);
             console.log("played 1");
@@ -113,9 +132,14 @@
                 text: [debrief]
             };
 
-       var playTones = {
+       var playTones1 = {
                 type: "call-function",
-                func: playList
+                func: playList1
+            };
+
+      var playTones2 = {
+                type: "call-function",
+                func: playList2
             };
 
 		jsPsych.preloadImages(trial_info.image, function() { start_experiment(); });
@@ -123,7 +147,7 @@
 		function start_experiment() {
 			jsPsych.init({
 				display_element: $('#jspsych_target'),
-				experiment_structure: [instruction_block, playTones, test_block, debrief_block],
+				experiment_structure: [instruction_block, playTones1, test_block, playTones2, debrief_block],
 				on_finish: function(data) {
 					jsPsych.dataAPI.displayData();
 				}
