@@ -21,6 +21,7 @@
         <button onclick="playTone(2)">2</button>
         <button onclick="playTone(3)">3</button>
         <button onclick="playTone(4)">4</button>
+        <button onclick="playList()">playList</button>
     </body>
 
 
@@ -43,13 +44,20 @@
         			audio.pause();
         				}
         			},50);
-        		}
+        	}
 
-      var ToneOut1 = playTone(1);
-      var ToneOut2 = playTone(2);
-      var ToneOut3 = playTone(3);
+        var ToneOut1 = playTone(1);
+        var ToneOut2 = playTone(2);
+        var ToneOut3 = playTone(3);
+        var ToneOut4 = playTone(4);
 
-      ToneOut3;
+        function playList(){
+          ToneOut1;
+          ToneOut2;
+          ToneOut3;
+          ToneOut4;
+          ToneOut1;
+        }
 
         // Experiment parameters
         var n_trials_per_stimulus = 1;
