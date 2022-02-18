@@ -148,13 +148,18 @@
        var playTones1 = {
                 type: "call-function",
                 func: playList1,
-                timing_post_trial: 2000
+                timing_post_trial: 2000,
+                on_finish : function(){
+                  console.log("I'VE DONE PLAYTONES 1");
+                }
             };
 
       var playTones2 = {
                 type: "call-function",
                 func: playList2,
-                timing_post_trial: 2000
+                timing_post_trial: 2000,
+                on_finish : function(){
+                  console.log("I'VE DONE PLAYTONES 1");
             };
 
       var waitAwhile = {
