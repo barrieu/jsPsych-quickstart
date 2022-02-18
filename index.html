@@ -173,7 +173,9 @@
       var outputSounds = {
         type: "text",
         text: '<div id="instructions"><p>--------------------------</p></div>',
-        on_start : playList1()
+        on_start : function(){
+          playList1();
+        }
       }
 
 		jsPsych.preloadImages(trial_info.image, function() { start_experiment(); });
