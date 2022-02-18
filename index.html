@@ -146,13 +146,13 @@
        var playTones1 = {
                 type: "call-function",
                 func: playList1,
-                post_trial_gap: 2000
+                timing_post_trial: 2000
             };
 
       var playTones2 = {
                 type: "call-function",
                 func: playList2
-                post_trial_gap: 2000
+                ptiming_post_trial: 2000
             };
 
 		jsPsych.preloadImages(trial_info.image, function() { start_experiment(); });
