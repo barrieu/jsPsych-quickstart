@@ -104,6 +104,8 @@
         var debrief1 = '<div id="instructions"><p>Thats the first sounds.</p></div>';
         var debrief2 = '<div id="instructions"><p>Thats the second sounds.</p></div>';
 
+        var justDashes = '<div id="instructions"><p>--------------------------</p></div>';
+
         // Generating Random Order for Stimuli
 
 		var stimuli = [
@@ -154,9 +156,10 @@
                 func: playList2,
                 timing_post_trial: 2000
             };
+
       var waitAwhile = {
             type: "text",
-            text: [],
+            text: [justDashes],
             timing_post_trial: 4000
         };
 
