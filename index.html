@@ -146,14 +146,19 @@
        var playTones1 = {
                 type: "call-function",
                 func: playList1,
-                timing_post_trial: 10000
+                timing_post_trial: 2000
             };
 
       var playTones2 = {
                 type: "call-function",
                 func: playList2,
-                timing_post_trial: 10000
+                timing_post_trial: 2000
             };
+      var waitAwhile = {
+            type: "text",
+            text: [],
+            timing_post_trial: 4000
+        };
 
 		jsPsych.preloadImages(trial_info.image, function() { start_experiment(); });
 
@@ -161,7 +166,7 @@
 			jsPsych.init({
 				display_element: $('#jspsych_target'),
 				//experiment_structure: [instruction_block, playTones1, test_block, playTones2, debrief_block],
-        experiment_structure: [instruction_block, playTones1, debrief_block1, playTones2, debrief_block2],
+        experiment_structure: [instruction_block, playTones1, waitAwhile, debrief_block1, playTones2, waitAwhile, debrief_block2],
 				on_finish: function(data) {
 					jsPsych.dataAPI.displayData();
 				}
