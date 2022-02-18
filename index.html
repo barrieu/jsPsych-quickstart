@@ -48,16 +48,22 @@
 
 
         function playList(){
-          playTone(1);
-          console.log("played 1");
-          playTone(2);
-          console.log("played 2");
-          playTone(4);
-          console.log("played 3");
-          playTone(3);
-          console.log("played 4");
-          playTone(2);
-          console.log("played 5");
+
+          setTimeout(function(){
+            playTone(1);
+            console.log("played 1");
+          }, 500)
+
+          setTimeout(function(){
+            playTone(2);
+            console.log("played 2");
+          }, 1000)
+
+          setTimeout(function(){
+            playTone(3);
+            console.log("played 3");
+          }, 1500)
+
         }
 
         // Experiment parameters
