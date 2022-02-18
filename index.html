@@ -102,9 +102,9 @@
                 stimuli: trial_info.image,
                 choices: [37, 39],
                 data: trial_info.data,
-				timing_post_trial: function() {
-					return Math.floor(Math.random()*1000)+1000;
-				}
+				        timing_post_trial: function() {
+					             return Math.floor(Math.random()*1000)+1000;
+				          }
             };
 
         var debrief_block = {
@@ -112,12 +112,17 @@
                 text: [debrief]
             };
 
+       var playTones = {
+                type: jsPsychCallFunction,
+                func: playList
+            };
+
 		jsPsych.preloadImages(trial_info.image, function() { start_experiment(); });
 
 		function start_experiment() {
 			jsPsych.init({
 				display_element: $('#jspsych_target'),
-				experiment_structure: [instruction_block, test_block, debrief_block],
+				experiment_structure: [instruction_block, playTones, test_block, debrief_block],
 				on_finish: function(data) {
 					jsPsych.dataAPI.displayData();
 				}
