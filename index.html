@@ -170,13 +170,20 @@
             timing_post_trial: 4000
         };
 
+      var outputSounds = {
+        type: "text",
+        text: '<div id="instructions"><p>--------------------------</p></div>',
+        on_start : playList1()
+      }
+
 		jsPsych.preloadImages(trial_info.image, function() { start_experiment(); });
 
 		function start_experiment() {
 			jsPsych.init({
 				display_element: $('#jspsych_target'),
 				//experiment_structure: [instruction_block, playTones1, test_block, playTones2, debrief_block],
-        experiment_structure: [instruction_block, playTones1, waitAwhile, debrief_block1, playTones2, waitAwhile, debrief_block2],
+        //experiment_structure: [instruction_block, playTones1, waitAwhile, debrief_block1, playTones2, waitAwhile, debrief_block2],
+        experiment_structure: [ instruction_block, outputSounds ],
 				on_finish: function(data) {
 					jsPsych.dataAPI.displayData();
 				}
