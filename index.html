@@ -34,7 +34,8 @@
 
         function playTone(selectPart){
           //console.log(JSON.stringify(settings.timeline));
-          console.log(jsPsych.version());
+          var version = jsPsych.version();
+          console.log(version);
           startT = (selectPart * 0.5) - 0.5;
           stopT  = startT + 0.4;
 
